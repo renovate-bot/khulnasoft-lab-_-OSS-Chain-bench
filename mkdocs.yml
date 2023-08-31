@@ -1,4 +1,4 @@
-site_name: Chain-bench
+site_name: OSS-Chain-bench
 site_url: https://khulnasoft-lab.github.io/oss-chain-bench/
 site_description: An open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmarks
 docs_dir: docs/

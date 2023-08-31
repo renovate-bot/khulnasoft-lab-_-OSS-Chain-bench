@@ -1,0 +1,17 @@
+{
+  "id": "4.3",
+  "name": "Package Registries",
+  "url": "https://avd.khulnasoft.com/compliance/softwaresupplychain/cis-1.0/cis-1.0-artifacts/4.3",
+  "checks": {
+    "4.3.4": {
+      "title": "Ensure webhooks of the package registry are secured",
+      "severity": "Critical",
+      "type": "ARTIFACT",
+      "entity": "PackageRegistry",
+      "description": "Use secured webhooks of the package registry.",
+      "remediation": "For each webhook in use, change it to secured (over HTTPS).",
+      "scannerType": "Rego",
+      "slsa_level": [4] 
+    }
+  }
+}
