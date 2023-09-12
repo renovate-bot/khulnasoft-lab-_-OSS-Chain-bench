@@ -10,7 +10,7 @@ require (
 	github.com/imdario/mergo v0.3.12
 	github.com/migueleliasweb/go-github-mock v0.0.8
 	github.com/rs/zerolog v1.26.1
-	github.com/spf13/cobra v1.5.0
+	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.11.0
 	github.com/stretchr/testify v1.8.0
 	github.com/thoas/go-funk v0.9.2
@@ -50,7 +50,7 @@ require (
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/hashicorp/go-version v1.4.0
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/open-policy-agent/opa v0.43.1
