@@ -13,7 +13,7 @@ require (
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.11.0
 	github.com/stretchr/testify v1.8.0
-	github.com/thoas/go-funk v0.9.2
+	github.com/thoas/go-funk v0.9.3
 	golang.org/x/oauth2 v0.0.0-20220722155238-128564f6959c
 )
 
