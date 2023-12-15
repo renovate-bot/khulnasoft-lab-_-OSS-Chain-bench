@@ -1,4 +1,4 @@
-FROM alpine:3.16 as build
+FROM alpine:3.19 as build
 
 WORKDIR /home/oss-chain-bench
 
@@ -9,7 +9,7 @@ COPY . .
 
 RUN make build
 
-FROM alpine:3.16 as product
+FROM alpine:3.19 as product
 
 WORKDIR /home/oss-chain-bench
 
