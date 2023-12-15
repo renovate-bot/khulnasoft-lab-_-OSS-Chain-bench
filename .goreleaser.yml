@@ -22,11 +22,22 @@ release:
   discussion_category_name: Announcements
 
 archives:
-  - replacements:
-      darwin: macOS
-      linux: Linux
-      amd64: 64bit
-      arm64: ARM64
+  - id: archive
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_
+      {{- if eq .Os "darwin" }}macOS
+      {{- else if eq .Os "linux" }}Linux
+      {{- else if eq .Os "openbsd" }}OpenBSD
+      {{- else if eq .Os "netbsd" }}NetBSD
+      {{- else if eq .Os "freebsd" }}FreeBSD
+      {{- else if eq .Os "dragonfly" }}DragonFlyBSD
+      {{- else}}{{- .Os }}{{ end }}-
+      {{- if eq .Arch "amd64" }}64bit
+      {{- else if eq .Arch "386" }}32bit
+      {{- else if eq .Arch "arm" }}ARM
+      {{- else if eq .Arch "arm64" }}ARM64
+      {{- else if eq .Arch "ppc64le" }}PPC64LE
+      {{- else }}{{ .Arch }}{{ end }}
     files:
       - README.md
       - LICENSE
@@ -35,10 +46,10 @@ archives:
 brews:
   - 
     tap:
-      owner: khulnasoft-lab
+      owner: khulnasoft-lab/
       name: homebrew-oss-chain-bench
-    homepage: "https://github.com/khulnasoft-lab/oss-chain-bench"
-    description: "OSS-Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
+    homepage: "https://github.com/khulnasoft-lab/oss-oss-chain-bench"
+    description: "Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
 
 dockers:
   - image_templates:
@@ -54,14 +65,14 @@ dockers:
       - oss-chain-bench
     build_flag_templates: 
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
-      - "--label=org.opencontainers.image.description=OSS-Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
-      - "--label=org.opencontainers.image.vendor=Khulnasoft Security"
+      - "--label=org.opencontainers.image.description=Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
+      - "--label=org.opencontainers.image.vendor=Aqua Security"
       - "--label=org.opencontainers.image.version={{ .Version }}"
       - "--label=org.opencontainers.image.created={{ .Date }}"
-      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft-lab/oss-chain-bench"
+      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft-lab/oss-oss-chain-bench"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
-      - "--label=org.opencontainers.image.url=https://github.com/khulnasoft-lab/oss-chain-bench"
-      - "--label=org.opencontainers.image.documentation=https://github.com/khulnasoft-lab/oss-chain-bench"
+      - "--label=org.opencontainers.image.url=https://github.com/khulnasoft-lab/oss-oss-chain-bench"
+      - "--label=org.opencontainers.image.documentation=https://github.com/khulnasoft-lab/oss-oss-chain-bench"
       - "--platform=linux/amd64"
     extra_files:
     - templates/
@@ -78,14 +89,14 @@ dockers:
       - oss-chain-bench
     build_flag_templates: 
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
-      - "--label=org.opencontainers.image.description=OSS-Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
-      - "--label=org.opencontainers.image.vendor=Khulnasoft Security"
+      - "--label=org.opencontainers.image.description=Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark"
+      - "--label=org.opencontainers.image.vendor=Aqua Security"
       - "--label=org.opencontainers.image.version={{ .Version }}"
       - "--label=org.opencontainers.image.created={{ .Date }}"
-      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft-lab/oss-chain-bench"
+      - "--label=org.opencontainers.image.source=https://github.com/khulnasoft-lab/oss-oss-chain-bench"
       - "--label=org.opencontainers.image.revision={{ .FullCommit }}"
-      - "--label=org.opencontainers.image.url=https://github.com/khulnasoft-lab/oss-chain-bench"
-      - "--label=org.opencontainers.image.documentation=https://github.com/khulnasoft-lab/oss-chain-bench"
+      - "--label=org.opencontainers.image.url=https://github.com/khulnasoft-lab/oss-oss-chain-bench"
+      - "--label=org.opencontainers.image.documentation=https://github.com/khulnasoft-lab/oss-oss-chain-bench"
       - "--platform=linux/arm64"
     extra_files:
     - templates/
